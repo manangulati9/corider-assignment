@@ -1,8 +1,11 @@
-import { Container, Flex, Text } from "@chakra-ui/react";
+import { Center, Container, Flex, SimpleGrid, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import back from "../../public/assets/Back.svg";
 import edit from "../../public/assets/edit-05.svg";
-import imgGroup from "../../public/assets/image_group.svg";
+import pfp1 from "../../public/assets/pfp1.png";
+import pfp2 from "../../public/assets/pfp2.png";
+import pfp3 from "../../public/assets/pfp3.png";
+import pfp4 from "../../public/assets/pfp4.png";
 import dots from "../../public/assets/dots-vertical.svg";
 
 export default function () {
@@ -29,8 +32,19 @@ export default function () {
         <Image src={edit} alt="edit" />
       </Flex>
       <Flex alignItems="center" gap="0.75rem" justifyContent="space-between">
-        <Flex gap="1rem">
-          <Image src={imgGroup} alt="imgGroup" loading="eager" />
+        <Center gap="1rem">
+          <SimpleGrid
+            columns={2}
+            spacing={0.5}
+            height="fit-content"
+            rounded="full"
+            overflow="clip"
+          >
+            <Image src={pfp1} alt="" />
+            <Image src={pfp2} alt="" />
+            <Image src={pfp3} alt="" />
+            <Image src={pfp4} alt="" />
+          </SimpleGrid>
           <Container textColor="gray.100">
             <Flex gap="0.5rem" alignItems="center">
               <Text>From</Text>
@@ -45,7 +59,7 @@ export default function () {
               </Text>
             </Flex>
           </Container>
-        </Flex>
+        </Center>
         <Image src={dots} alt="dots" />
       </Flex>
     </Flex>

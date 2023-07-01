@@ -1,37 +1,11 @@
 import { Flex } from "@chakra-ui/react";
 import SendBubble from "./sendBubble";
 import ReceiveBubble from "./receiveBubble";
-import { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-
-interface Messages {
-  id: string;
-  message: string;
-  sender: {
-    image: string;
-    is_kyc_verified: boolean;
-    self: boolean;
-    user_id: string;
-  };
-  time: string;
-}
+import { useMessages } from "@/lib/hooks";
 
 export default function () {
-  const [messages, setMessages] = useState<Messages[]>([]);
-  const [pageNum, setPageNum] = useState(0);
-
-  const loadMessages = async () => {
-    const res = await fetch(
-      `https://qa.corider.in/assignment/chat?page=${pageNum}`
-    );
-    const msgs = await res.json();
-    setMessages((prevMsgs) => [...prevMsgs, ...msgs.chats]);
-    setPageNum((prevVal) => prevVal + 1);
-  };
-
-  useEffect(() => {
-    loadMessages();
-  }, []);
+  const { messages, loadMessages } = useMessages();
 
   return (
     <Flex
@@ -39,6 +13,7 @@ export default function () {
       direction="column-reverse"
       overflowY={"auto"}
       id="scrollableDiv"
+      style={{ scrollbarWidth: "thin" }}
     >
       <InfiniteScroll
         dataLength={15}
@@ -46,8 +21,9 @@ export default function () {
         style={{ display: "flex", flexDirection: "column-reverse" }}
         inverse={true}
         hasMore={true}
-        loader={<h4 style={{ display: "none" }}>Loading...</h4>}
+        loader={<div style={{ display: "none" }}></div>}
         scrollableTarget="scrollableDiv"
+        initialScrollY={0}
       >
         {messages.map((msg) => {
           if (msg.sender.self) {
