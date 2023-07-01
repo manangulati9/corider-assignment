@@ -1,34 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CoRider Assignment
+
+This repository contains the code for the CoRider Assignment, which is a web application built using Next.js and Chakra UI. The main feature implemented in this assignment is the infinite scrolling for chats to load previous chats.
+
+## Tech Stack
+
+The following technologies and libraries were used in this project:
+
+- **Next.js**: Next.js is a React framework that allows for server-side rendering, automatic code splitting, and simple API routes.
+- **Chakra UI**: Chakra UI is a simple and modular component library for building React applications. It provides a set of accessible and customizable UI components.
+
+## Features
+
+### Infinite Scrolling for Chats
+
+The primary feature of this assignment is the implementation of infinite scrolling for chats. With infinite scrolling, previous chats are loaded dynamically as the user scrolls up, creating a seamless and continuous chat experience. This feature enhances the user experience by reducing the need for manual pagination or clicking on "load more" buttons.
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy of the project up and running, follow these steps:
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/your-username/corider-assignment.git
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd corider-assignment
+```
+
+3. Install the dependencies:
+
+```bash
+npm install
+```
+
+4. Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open your web browser and visit `http://localhost:3000` to see the application running locally.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Once the application is running, you can interact with the chat interface and experience the infinite scrolling feature. Scroll up in the chat window, and previous chats will be automatically loaded.
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
+This project is licensed under the [MIT License](LICENSE).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Acknowledgements
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- The creators of Next.js and Chakra UI for providing excellent tools and libraries.
+- The CoRider team for assigning this project and providing the opportunity to learn and implement the infinite scrolling feature.
