@@ -7,7 +7,7 @@ export default function ({ img, message }: { img: string; message: string }) {
       sx={{
         display: "inline-flex",
         alignItems: "flex-start",
-        gap: "0.5rem",
+        gap: "0.2rem",
       }}
       my="0.75rem"
       mx="1rem"

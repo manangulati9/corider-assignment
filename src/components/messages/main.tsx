@@ -2,11 +2,15 @@ import { Flex } from "@chakra-ui/react";
 import SendBubble from "./sendBubble";
 import ReceiveBubble from "./receiveBubble";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { useMessages } from "@/lib/hooks";
+import { Messages } from "@/lib/hooks";
 
-export default function () {
-  const { messages, loadMessages } = useMessages();
-
+export default function ({
+  messages,
+  loadMessages,
+}: {
+  messages: Messages[];
+  loadMessages: () => Promise<void>;
+}) {
   return (
     <Flex
       grow={1}
@@ -16,7 +20,7 @@ export default function () {
       style={{ scrollbarWidth: "thin" }}
     >
       <InfiniteScroll
-        dataLength={15}
+        dataLength={messages.length}
         next={loadMessages}
         style={{ display: "flex", flexDirection: "column-reverse" }}
         inverse={true}

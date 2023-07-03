@@ -7,8 +7,9 @@ import pfp2 from "../../public/assets/pfp2.png";
 import pfp3 from "../../public/assets/pfp3.png";
 import pfp4 from "../../public/assets/pfp4.png";
 import dots from "../../public/assets/dots-vertical.svg";
+import { TripData } from "@/lib/hooks";
 
-export default function () {
+export default function ({ tripData }: { tripData: TripData | undefined }) {
   return (
     <Flex
       flexDirection="column"
@@ -27,7 +28,7 @@ export default function () {
       >
         <Image src={back} alt="back" />
         <Text flexGrow={1} fontWeight={700} fontSize="1.5rem">
-          Trip 1
+          {tripData ? tripData.name : ""}
         </Text>
         <Image src={edit} alt="edit" />
       </Flex>
@@ -35,7 +36,6 @@ export default function () {
         <Center gap="1rem">
           <SimpleGrid
             columns={2}
-            spacing={0.5}
             height="fit-content"
             rounded="full"
             overflow="clip"
@@ -49,13 +49,13 @@ export default function () {
             <Flex gap="0.5rem" alignItems="center">
               <Text>From</Text>
               <Text textColor="secondary" fontWeight={700} fontSize="1.25rem">
-                IGI Airport, T3
+                {tripData ? tripData.from : ""}
               </Text>
             </Flex>
             <Flex gap="0.5rem" alignItems="center">
               <Text>To</Text>
               <Text textColor="secondary" fontWeight={700} fontSize="1.25rem">
-                Sector 28
+                {tripData ? tripData.to : ""}
               </Text>
             </Flex>
           </Container>
