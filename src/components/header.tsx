@@ -9,7 +9,7 @@ import pfp4 from "../../public/assets/pfp4.png";
 import dots from "../../public/assets/dots-vertical.svg";
 import { TripData } from "@/lib/hooks";
 
-export default function ({ tripData }: { tripData: TripData | undefined }) {
+export default function () {
   return (
     <Flex
       flexDirection="column"
@@ -28,7 +28,7 @@ export default function ({ tripData }: { tripData: TripData | undefined }) {
       >
         <Image src={back} alt="back" />
         <Text flexGrow={1} fontWeight={700} fontSize="1.5rem">
-          {tripData ? tripData.name : ""}
+          Trip 1
         </Text>
         <Image src={edit} alt="edit" />
       </Flex>
@@ -49,13 +49,13 @@ export default function ({ tripData }: { tripData: TripData | undefined }) {
             <Flex gap="0.5rem" alignItems="center">
               <Text>From</Text>
               <Text textColor="secondary" fontWeight={700} fontSize="1.25rem">
-                {tripData ? tripData.from : ""}
+                IGI Airport, T3
               </Text>
             </Flex>
             <Flex gap="0.5rem" alignItems="center">
               <Text>To</Text>
               <Text textColor="secondary" fontWeight={700} fontSize="1.25rem">
-                {tripData ? tripData.to : ""}
+                Sector 28
               </Text>
             </Flex>
           </Container>

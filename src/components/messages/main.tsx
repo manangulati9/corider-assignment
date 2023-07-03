@@ -2,15 +2,10 @@ import { Flex } from "@chakra-ui/react";
 import SendBubble from "./sendBubble";
 import ReceiveBubble from "./receiveBubble";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { Messages } from "@/lib/hooks";
+import { useMessages } from "@/lib/hooks";
 
-export default function ({
-  messages,
-  loadMessages,
-}: {
-  messages: Messages[];
-  loadMessages: () => Promise<void>;
-}) {
+export default function () {
+  const { messages, loadMessages } = useMessages();
   return (
     <Flex
       grow={1}
